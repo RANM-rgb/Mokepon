@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>MOKEPON</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/mokepon1.js" defer></script>
+    <link rel="icon" href="./imagen/pokebola.png" type="image/png">
+</head>
+<body class="color-body">
+    <div class="container">
+        <h1 class="color-titulo animate-title"> 🔥MOKÉP🏔️N💧</h1>
+
+        <section id="seleccionar-mascota" class="card">
+            <h2 class="animate-title">Elige tu mascota</h2>
+            <div class="mascota-opciones">
+                <label for="hipodoge" class="opcion-mascota">
+                    <input type="radio" name="mascota" id="hipodoge">
+                    <img src="./imagen/Hipodoge.jpg" alt="Hipodoge" class="imagen-mascota">
+                    Hipodoge
+                </label>
+
+                <label for="capipepo" class="opcion-mascota">
+                    <input type="radio" name="mascota" id="capipepo">
+                    <img src="./imagen/capipepo.jpg" alt="Capipepo" class="imagen-mascota">
+                    Capipepo
+                </label>
+
+                <label for="ratigueya" class="opcion-mascota">
+                    <input type="radio" name="mascota" id="ratigueya">
+                    <img src="./imagen/ratigueya.jpg" alt="Ratigueya" class="imagen-mascota">
+                    Ratigueya
+                </label>
+            </div>
+
+            <button id="boton-seleccionar" class="styled-button" type="button">Seleccionar</button>
+        </section>
+
+        <section id="seleccionar-ataque" class="card">
+            <h2 class="animate-title">Elige tu ataque</h2>
+            <p class="parrafo-sombreado">
+                Tu mascota <span id="mascota-jugador"></span> tiene <span id="vidas-jugador">3</span> vidas
+            </p>
+            <p class="parrafo-sombreado">
+                La mascota <span id="mascota-enemigo"></span> del enemigo tiene <span id="vidas-enemigo">3</span> vidas
+            </p>
+
+            <div class="ataques">
+                <button id="ataque-fuego" class="styled-button fuego" type="button">Fuego🔥</button>
+                <button id="ataque-agua" class="styled-button agua" type="button">Agua💧</button>
+                <button id="ataque-tierra" class="styled-button tierra" type="button">Tierra🏔️</button>
+            </div>
+        </section>
+
+        <section id="mensajes" class="mensajes card"></section>
+
+        <section id="reiniciar" class="card">
+            <button class="styled-button reiniciar" type="button">Reiniciar</button>
+        </section>
+
+        <footer>
+            <div class="flex-container">
+                <div class="cajas">
+                    <p>2025 PROYECTO INDIVIDUAL <a href="mokepon1.html">MOKEPON⚔️⚡</a></p>
+                    <p>MATERIA: PROGRAMACIÓN WEB</p>
+                    <p>MAESTRA: TANIA OFELIA LÓPEZ ZERÓN</p>
+                </div>
+            </div>
+
+            <section>
+                <audio controls autoplay loop>
+                    <source src="./Musica/byte.mp3" type="audio/mpeg">
+                    Tu navegador no soporta la reproducción de audio.
+                </audio>
+            </section>
+        </footer>
+    </div>
+
+    <!-- Sonido para botones -->
+    <audio id="boton-sonido" src="https://www.myinstants.com/media/sounds/select.mp3" preload="auto"></audio>
+
+    <!-- Reproduce el sonido al hacer clic -->
+    <script>
+        const sonidoBoton = document.getElementById('boton-sonido');
+        const botones = document.querySelectorAll('.styled-button, .reiniciar');
+
+        botones.forEach(boton => {
+            boton.addEventListener('click', () => {
+                sonidoBoton.currentTime = 0;
+                sonidoBoton.play();
+            });
+        });
+    </script>
+</body>
+</html>
